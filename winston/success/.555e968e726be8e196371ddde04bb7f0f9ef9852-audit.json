@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "F:\\HRM\\HRM Backend\\winston\\success\\.555e968e726be8e196371ddde04bb7f0f9ef9852-audit.json",
+    "files": [
+        {
+            "date": 1743588318355,
+            "name": "F:\\HRM\\HRM Backend\\winston\\success\\02-04-2025-16-success.log",
+            "hash": "2a7f973aa19e5fde85f613ad577f081da045a6a0248218fe166c6652357b1e22"
+        }
+    ],
+    "hashType": "sha256"
+}
