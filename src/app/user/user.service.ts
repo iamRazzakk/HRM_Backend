@@ -19,8 +19,21 @@ const findUsersFromDB = async()=>{
 }
 
 
+const deleteUserFromDB = async(userId:string)=>{
+    const user = await prisma.user.delete({
+        where:{
+            id:userId
+        }
+    })
+    if(!user){
+        throw new Error('Failed to delete user')
+    }
+    return user
+}
+
 
 export const userService = {
     createUserIntoDB,
-    findUsersFromDB
+    findUsersFromDB,
+    deleteUserFromDB
 }

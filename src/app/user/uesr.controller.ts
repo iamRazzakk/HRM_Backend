@@ -1,43 +1,46 @@
 import { Request, Response } from "express";
 import { userService } from "./user.service";
+import catchAsync from "../../utils/catchAsync";
+import { sendResponse } from "../../utils/sendResponse";
+import { StatusCodes } from "http-status-codes";
 
-const createUser = async (req:Request, res:Response) => {
-try {
+/**
+ * @desc Create a new user
+ * @route POST /api/v1/users
+ * @access Public
+ */
+
+const createUser = catchAsync(async(req:Request, res:Response)=>{
     const user = req.body;
     const result = await userService.createUserIntoDB(user)
-    res.status(200).json({
-        success: true,
-        message: 'User created successfully',
-        data: result
+    sendResponse(res, StatusCodes.OK,{
+        success:true,
+        message:'User created successfully',
+        data:result
     })
-} catch (error) {
-    console.log("failed to create user", error)
-    res.status(500).json({
-        success: false,
-        message: 'Failed to create user',
-})
-}}
-
-
-
-const getUsers = async (req:Request, res:Response) => {
-    try {
-        const result = await userService.findUsersFromDB()
-        res.status(200).json({
-            success: true,
-            message: 'Users retrieved successfully',
-            data: result
-        })
-    } catch (error) {
-        console.log("failed to get users", error)
-        res.status(500).json({
-            success: false,
-            message: 'Failed to get users',
-        })
-    }
 }
+)
+const getUsers = catchAsync(async(req:Request, res:Response)=>{
+    const result = await userService.findUsersFromDB()
+    sendResponse(res, StatusCodes.OK,{
+        success:true,
+        message:'Users retrieved successfully',
+        data:result
+    })
+})
+
+const deleteUser = catchAsync(async(req:Request, res:Response)=>{
+    const userId = req.params.id;
+const result= await userService.deleteUserFromDB(userId)
+sendResponse(res, StatusCodes.OK,{
+    success:true,
+    message:'User deleted successfully',
+    data:result
+})
+})
 
 export const userController = {
     createUser,
-    getUsers
+    getUsers,
+    deleteUser
 }
