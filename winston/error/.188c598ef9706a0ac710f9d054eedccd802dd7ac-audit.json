@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/.188c598ef9706a0ac710f9d054eedccd802dd7ac-audit.json",
+    "files": [
+        {
+            "date": 1743698065678,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/03-04-2025-22-error.log",
+            "hash": "3517aec6cf86f9f94bfe96d8276aff065b4edff7ba41a52aa1cf82733be22801"
+        },
+        {
+            "date": 1743699962456,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/03-04-2025-23-error.log",
+            "hash": "2a1da2d7c304d6334dbe855e1121b1fb6b38d9c2b979b1f48cd6d3e829425e1c"
+        }
+    ],
+    "hashType": "sha256"
+}

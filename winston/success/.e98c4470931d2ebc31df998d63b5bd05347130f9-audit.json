@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/.e98c4470931d2ebc31df998d63b5bd05347130f9-audit.json",
+    "files": [
+        {
+            "date": 1743698065669,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/03-04-2025-22-success.log",
+            "hash": "9e4e301f8175202509e98f61151fc01b2f3666566c25417c8866f6c6e70f71a7"
+        },
+        {
+            "date": 1743699962444,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/03-04-2025-23-success.log",
+            "hash": "d7475e3330125de9c447aca53624bd269bd1a1af81034e3bb78a2c3294479d64"
+        }
+    ],
+    "hashType": "sha256"
+}
