@@ -10,38 +10,43 @@ const createUserIntoDB = async (userData: IUser) => {
     try {
       const salt = generateSalt();
       const hashedPassword = hashPasswordWithSalt(userData.password, salt);
-        const existingUser = await prisma.user.findUnique({
-            where:{
-                email:userData.email
-            }
-        })
-        if(existingUser){
-            throw new Error('User with this email already exists')
-        }
-      const user = await prisma.user.create({
-        data: {
-            firstName: userData.firstName,
-            lastName: userData.lastName,
-            email: userData.email,
-            phone: userData.phone,
-            address: userData.address,
-            role: userData.role,
-            // @ts-ignore
-            department:userData.department,
-            degisnation: userData.designation,
-            dateOfBirth: new Date(userData.dateOfBirth),
-            joiningDate: new Date(userData.joiningDate),
-            salary: userData.salary,
-            profilePicture: userData.profilePicture,
-            createdAt: new Date(),
-            password: hashedPassword,
+      
+      const existingUser = await prisma.user.findUnique({
+        where: {
+          email: userData.email,
         },
       });
+  
+      if (existingUser) {
+        throw new Error('User with this email already exists');
+      }
+  
+      const user = await prisma.user.create({
+        data: {
+          firstName: userData.firstName,
+          lastName: userData.lastName,
+          email: userData.email,
+          phone: userData.phone,
+          address: userData.address,
+          role: userData.role,
+          department: userData.department,
+          designation: userData.designation,
+          dateOfBirth: new Date(userData.dateOfBirth),
+          joiningDate: new Date(userData.joiningDate),
+          salary: userData.salary,
+          profilePicture: userData.profilePicture,
+          createdAt: new Date(),
+          password: hashedPassword,  // Storing hashedPassword:salt
+        },
+      });
+      console.log(user)
+  
       return user;
     } catch (error) {
       throw new Error(`Failed to create user: ${(error as Error).message}`);
     }
   };
+  
 
 //   find all users from db
 const findUsersFromDB = async()=>{
