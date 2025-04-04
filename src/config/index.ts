@@ -7,4 +7,5 @@ export default {
   ip_address: process.env.IP_ADDRESS,
   node_env: process.env.NODE_ENV,
   port: process.env.PORT,
+  BCRYPT_SALT_ROUNDS:process.env.BCRYPT_SALT_ROUNDS
 };

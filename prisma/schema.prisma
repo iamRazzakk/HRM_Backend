@@ -1,6 +1,5 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -12,9 +11,45 @@ datasource db {
 
 model User {
   id        String   @id @default(cuid())
-  name      String?
+  firstName      String
+  lastName      String
   email     String?  @unique
+  phone     String?  @unique
+  address   String?
+  role      Role   @default(Employee)
+  department Department @default(HR)
+  designation  Designation  @default(SENIOR_ENGINEER)
+  dateOfBirth DateTime?
+  joiningDate DateTime?
+  salary    Float?
+  profilePicture String?
   password  String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+enum Role {
+  Admin
+  HR
+  Employee
+  Manager
+  Intern
+}
+
+enum Department {
+  HR
+  IT
+  Finance
+  Marketing
+  Sales
+  Operations
+}
+enum Designation {
+  JUNIOR_ENGINEER
+  SENIOR_ENGINEER
+  TEAM_LEAD
+  MANAGER
+  SENIOR_MANAGER
+  DIRECTOR
+  PRESIDENT
+  CEO
 }
