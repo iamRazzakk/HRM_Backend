@@ -1,44 +1,65 @@
-import { comparePasswordWithSalt } from "../../helper/generateSalt";
-import { IUser } from "../user/user.interface";
 import { prisma } from "../user/user.service";
-import { generateAccessToken, generateRefreshToken } from "../../utils/jwt";
-const loginUserIntoDB = async (loginData: IUser) => {
-    const { email, password } = loginData;
+import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from "../../helper/jwtHelper";
+import { comparePassword } from "../../helper/generateSalt";
+import { ILoginData, ILoginResponse } from "./auth.interface";
 
-    const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) {
-      throw new Error('User not found');
-    }
-  
-    console.log('Stored Password:', user.password); // Log the stored password
-  
-    const isPasswordValid = comparePasswordWithSalt(password, user.password); // This will trigger logs inside the function
-    console.log('Password Valid:', isPasswordValid);
-  
-    if (!isPasswordValid) {
-      throw new Error('Invalid credentials');
-    }
-  
-    const payload = {
-      id: user.id,
-      email: user.email,
-      role: user.role,
-    };
-  
-    const accessToken = generateAccessToken(payload);
-    const refreshToken = generateRefreshToken(payload);
-  
-    const { password: _, ...userWithoutPassword } = user;
-  
-    return {
-      user: userWithoutPassword,
-      accessToken,
-      refreshToken,
-    };
+
+
+const loginUserIntoDB = async (loginData: ILoginData): Promise<ILoginResponse> => {
+  const user = await prisma.user.findUnique({
+    where: { email: loginData.email },
+  });
+
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  const isPasswordValid = await comparePassword(loginData.password, user.password!);
+  if (!isPasswordValid) {
+    throw new Error("Invalid password");
+  }
+
+  // Generate tokens without storing refreshToken in DB
+  const accessToken = generateAccessToken({
+    userId: user.id,
+    role: user.role,
+    email: user.email!,
+  });
+
+  const refreshToken = generateRefreshToken({
+    userId: user.id,
+    role: user.role,
+    email: user.email!,
+  }); 
+
+  return {
+    accessToken
   };
+};
+
+const refreshAccessToken = async (refreshToken: string) => {
+  // Verify the refresh token without DB check
+  const decoded = verifyRefreshToken(refreshToken);
+  
+  // Optionally: You could add a check if user still exists
+  const user = await prisma.user.findUnique({
+    where: { id: decoded.userId },
+  });
+
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  return generateAccessToken({
+    userId: user.id,
+    role: user.role,
+    email: user.email!,
+  });
+};
+
+
 
 export const authService = {
-    loginUserIntoDB,
-}
-
-
+  loginUserIntoDB,
+  refreshAccessToken,
+};

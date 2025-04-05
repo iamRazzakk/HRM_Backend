@@ -29,6 +29,11 @@
             "date": 1743789899665,
             "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/05-04-2025-00-success.log",
             "hash": "bc7342d1f137791c19bcf5608d40c62cd79471b5273220021c183ff690afb482"
+        },
+        {
+            "date": 1743859550953,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/05-04-2025-19-success.log",
+            "hash": "542529b78c4b8d62fbccbf65b1911ec92d7cd708725c8eb3327f32d6579db0a5"
         }
     ],
     "hashType": "sha256"
