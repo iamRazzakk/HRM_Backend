@@ -1,6 +1,7 @@
 import express from 'express';
 import { userRoutes } from '../app/user/user.routes';
 import { authRoutes } from '../app/auth/auth.route';
+import { attendanceManagementRoutes } from '../app/attendanceManagement/attendanceManagement.routes';
 const router = express.Router();
 
 const apiRoutes = [
@@ -11,6 +12,10 @@ const apiRoutes = [
     {
         path:"/auth",
         route:authRoutes
+    },
+    {
+        path:"/attendance",
+        route: attendanceManagementRoutes
     }
 ]
 

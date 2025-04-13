@@ -6,34 +6,9 @@
     "auditLog": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/.e98c4470931d2ebc31df998d63b5bd05347130f9-audit.json",
     "files": [
         {
-            "date": 1743778777512,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/04-04-2025-20-success.log",
-            "hash": "9b456c88339cc72d03a4a980a0f121e0b3249b7eb3fb93dbb53050e5ec36c03d"
-        },
-        {
-            "date": 1743779168416,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/04-04-2025-21-success.log",
-            "hash": "e9e0d0e1327737a2da523dd106a8a6892e1d3a7f259ffad884f7a9aaa136a9ed"
-        },
-        {
-            "date": 1743782488353,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/04-04-2025-22-success.log",
-            "hash": "36e8764705b793f2edd9eec84b6a1f035979382169311bb6572284d6954f54c8"
-        },
-        {
-            "date": 1743787042655,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/04-04-2025-23-success.log",
-            "hash": "3a3f926975628e85c5425ed0f5935cc9f3f97c3c419bfca9bae8637f0d832f6f"
-        },
-        {
-            "date": 1743789899665,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/05-04-2025-00-success.log",
-            "hash": "bc7342d1f137791c19bcf5608d40c62cd79471b5273220021c183ff690afb482"
-        },
-        {
-            "date": 1743859550953,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/05-04-2025-19-success.log",
-            "hash": "542529b78c4b8d62fbccbf65b1911ec92d7cd708725c8eb3327f32d6579db0a5"
+            "date": 1744553389962,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/13-04-2025-20-success.log",
+            "hash": "2ce3fdbf3f6e7842cfae1baf78a8cc79fa6ad951b5789ca9b24a034e0a263a9b"
         }
     ],
     "hashType": "sha256"

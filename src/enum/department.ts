@@ -6,5 +6,6 @@ export enum Department {
     SALES = "SALES",         
     OPERATIONS = "OPERATIONS",
     SUPPORT = "SUPPORT",     
-    ENGINEERING = "ENGINEERING"
+    ENGINEERING = "ENGINEERING",
+    USER = "USER"
 }

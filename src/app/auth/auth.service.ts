@@ -26,12 +26,6 @@ const loginUserIntoDB = async (loginData: ILoginData): Promise<ILoginResponse> =
     email: user.email!,
   });
 
-  const refreshToken = generateRefreshToken({
-    userId: user.id,
-    role: user.role,
-    email: user.email!,
-  }); 
-
   return {
     accessToken
   };
