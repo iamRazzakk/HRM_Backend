@@ -6,9 +6,14 @@
     "auditLog": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/.188c598ef9706a0ac710f9d054eedccd802dd7ac-audit.json",
     "files": [
         {
-            "date": 1744553389971,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/13-04-2025-20-error.log",
-            "hash": "b88cc57e01f165f2c8c36d60cb7706995327c15ff1ca732c3b690063b7559a13"
+            "date": 1745164602068,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/20-04-2025-21-error.log",
+            "hash": "10a9bb0fbbc30fd7b037ab6765c3beccb66cf3359240161bebdecc71868f7bb5"
+        },
+        {
+            "date": 1745164975093,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/20-04-2025-22-error.log",
+            "hash": "7e3e405b7a516b64c65eb23b8aa2d210ba84b459b8ea63568b392a6500e95070"
         }
     ],
     "hashType": "sha256"

@@ -6,9 +6,14 @@
     "auditLog": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/.e98c4470931d2ebc31df998d63b5bd05347130f9-audit.json",
     "files": [
         {
-            "date": 1744553389962,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/13-04-2025-20-success.log",
-            "hash": "2ce3fdbf3f6e7842cfae1baf78a8cc79fa6ad951b5789ca9b24a034e0a263a9b"
+            "date": 1745164602059,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/20-04-2025-21-success.log",
+            "hash": "f8a608a9d8890c08057e4287d73a4443861b3bcddd327696baf404757e0554c0"
+        },
+        {
+            "date": 1745164973999,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/20-04-2025-22-success.log",
+            "hash": "d79735546461aec0811e36c5e541b196ec29b7015b3a3d3995e49411ebffc41c"
         }
     ],
     "hashType": "sha256"

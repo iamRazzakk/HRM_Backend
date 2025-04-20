@@ -22,7 +22,27 @@ const createAttendanceManagementIntoDB = async(payload:IAttendance) => {
     return create
 }
 
+const getAllAttendanceManagementFromDB = async()=>{
+    const getAll = await prisma.employee.findMany({
+        include:{
+            user:{
+                select:{
+                    firstName:true,
+                    lastName:true,
+                    email:true,
+                    id:true,
+                }
+            }   
+        }
+    })
+    if(!getAll){
+        throw new Error('Failed to get all attendance')
+    }
+    return getAll
+}
+
 
 export const attendanceManagementService = {
-    createAttendanceManagementIntoDB
+    createAttendanceManagementIntoDB,
+    getAllAttendanceManagementFromDB
 }

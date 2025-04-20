@@ -11,11 +11,21 @@ const createAttendanceManagement = catchAsync(async(req:Request, res:Response)=>
         success:true,
         message:"Employee attendance created successfully",
         data:payload,
-        errorMessages:null
     })
 })
 
 
+const getAllAttendanceManagement = catchAsync(async(req:Request, res:Response)=>{
+    const payload = await attendanceManagementService.getAllAttendanceManagementFromDB()
+    sendResponse(res, StatusCodes.OK,{
+        success:true,
+        message:"Employee attendance created successfully",
+        data:payload,
+    })
+}
+)
+
 export const attendanceManagementController = { 
-    createAttendanceManagement
+    createAttendanceManagement,
+    getAllAttendanceManagement
 }
