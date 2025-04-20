@@ -3,8 +3,9 @@ export enum Designation {
     SeniorDeveloper = "SeniorDeveloper",
     TeamLead = "TeamLead",
     MANAGER = "Manager",
- Director = "Director",
+    Director = "Director",
     PRESIDENT = "President",
     CEO = "CEO",
+    USER = "USER",
 }
 
