@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client"
 import {  hashPassword } from "../../helper/generateSalt"
 import { IUser } from "./user.interface"
+import { Role } from "../../enum/role";
 
 export const prisma = new PrismaClient()
 
@@ -27,7 +28,7 @@ const createUserIntoDB = async (userData: IUser) => {
         email: userData.email,
         phone: userData.phone,
         address: userData.address,
-        role: userData.role,
+        role: userData.role.toUpperCase() as Role,
         // @ts-ignore
         department: userData.department,
         // @ts-ignore
