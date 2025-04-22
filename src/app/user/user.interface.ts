@@ -8,7 +8,7 @@ export type IUser = {
     email: string;
     phone:string;
     address: string;
-    role: "Admin" | "HR" | "Employee"| "Manager"| "Intern";
+    role: "Admin" | "HR" | "Employee"| "Manager"| "Intern"| "User";
     department: Department | undefined;
     designation: Designation | undefined;
     dateOfBirth: Date;
@@ -18,3 +18,6 @@ export type IUser = {
     password: string;
     createdAt: Date;
 }
+
+
+
