@@ -4,7 +4,7 @@ interface ResponseData {
   success: boolean;
   message: string;
   data?: any;
-  errorMessages?: any;
+  meta?:any
 }
 
 export const sendResponse = (res: Response, statusCode: number, data: ResponseData) => {
