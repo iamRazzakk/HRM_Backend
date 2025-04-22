@@ -1,7 +1,7 @@
 import { presentStatus } from "../../enum/presentStatus";
 
 export type IAttendance = {
-    userId: string;
+  userId: string;
   date:Date;
   timeIn: string;
   timeOut: string;

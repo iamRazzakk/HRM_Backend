@@ -26,15 +26,14 @@ model User {
   password  String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  employee  Employee? 
+  employee  Employee[]
 }
 
 
 model Employee {
  employid        String   @id @default(cuid())
-  userId          String   @unique
+  userId          String  
   user            User     @relation(fields: [userId], references: [id])
-
   date            DateTime
   timeIn          String
   timeOut         String

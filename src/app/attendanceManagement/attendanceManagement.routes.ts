@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { attendanceManagementController } from "./attendanceManagement.controller";
 
-const route = Router();
+const router = Router();
 
-route.post("/create-attendance", attendanceManagementController.createAttendanceManagement)
-route.get("/", attendanceManagementController.getAllAttendanceManagement)
+router.post("/create-attendance", attendanceManagementController.createAttendanceManagement)
+router.get("/", attendanceManagementController.getAllAttendanceManagement)
+router.get("/:id", attendanceManagementController.getSingleAttendanceManagement)
 
-export const attendanceManagementRoutes = route;
+export const attendanceManagementRoutes = router;

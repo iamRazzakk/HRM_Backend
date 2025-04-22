@@ -5,20 +5,16 @@ import { IAttendance } from "./attendanceManagement.interface"
  * */ 
 
 const createAttendanceManagementIntoDB = async(payload:IAttendance) => {
-    const today = new Date().toISOString().split('T')[0];
-    const timeInDate = new Date(payload.timeIn).toISOString().split('T')[0];
-    if (timeInDate !== today) {
-        throw new Error("Attendance can only be marked for today.");
-    }
-    const isExist = await prisma.employee.findFirst({
-        where: {
-            userId: payload.userId,
-            date:payload.timeIn
-        }
-    })
-    if(isExist){
-        throw new Error('Attendance already exists for today')
-    }
+ 
+    const userExists = await prisma.user.findUnique({
+        where: { id: payload.userId },
+      });
+      console.log("userExists", userExists);
+    
+      if (!userExists) {
+        throw new Error("❌ User not found!");
+      }
+    
     const create = await prisma.employee.create({
         data:{
             user: {
@@ -58,8 +54,20 @@ const getAllAttendanceManagementFromDB = async()=>{
     return getAll
 }
 
+const getSingleAttendanceManagementFromDB = async(id:string)=>{
+    const singleOne = await prisma.employee.findUnique({
+        where:{
+            employid:id
+        }
+    })
+    if(!singleOne){
+        throw new Error('Failed to get single attendance')
+    }
+    return singleOne
+}
 
 export const attendanceManagementService = {
     createAttendanceManagementIntoDB,
-    getAllAttendanceManagementFromDB
+    getAllAttendanceManagementFromDB,
+    getSingleAttendanceManagementFromDB
 }

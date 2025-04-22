@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx ts-node-dev --respawn --transpile-only src/server.ts",
     "studio": "npx prisma studio",
-    "migrate": "npx prisma migrate dev",
+    "migrate": "npx prisma migrate dev --name",
     "generate": "npx prisma generate",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch"
