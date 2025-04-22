@@ -1,7 +1,24 @@
 import { prisma } from "../user/user.service"
 import { IAttendance } from "./attendanceManagement.interface"
 
+/**
+ * */ 
+
 const createAttendanceManagementIntoDB = async(payload:IAttendance) => {
+    const today = new Date().toISOString().split('T')[0];
+    const timeInDate = new Date(payload.timeIn).toISOString().split('T')[0];
+    if (timeInDate !== today) {
+        throw new Error("Attendance can only be marked for today.");
+    }
+    const isExist = await prisma.employee.findFirst({
+        where: {
+            userId: payload.userId,
+            date:payload.timeIn
+        }
+    })
+    if(isExist){
+        throw new Error('Attendance already exists for today')
+    }
     const create = await prisma.employee.create({
         data:{
             user: {
