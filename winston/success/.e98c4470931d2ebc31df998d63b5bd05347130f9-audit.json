@@ -6,21 +6,6 @@
     "auditLog": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/.e98c4470931d2ebc31df998d63b5bd05347130f9-audit.json",
     "files": [
         {
-            "date": 1745293107671,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/22-04-2025-09-success.log",
-            "hash": "d3f6eb43c40834a7c420219da048f8175b507adaa93bdb7079ccc58d905dc67f"
-        },
-        {
-            "date": 1745294528288,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/22-04-2025-10-success.log",
-            "hash": "c605f0a0a3fc272fce8496252edab363574b24416cb028deb961cb5aebaa5fac"
-        },
-        {
-            "date": 1745298166628,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/22-04-2025-11-success.log",
-            "hash": "aee38be601834f1ad2ba78517a6e0dc03d08a0b1215e967a4733c1f132ba92db"
-        },
-        {
             "date": 1745302552313,
             "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/22-04-2025-12-success.log",
             "hash": "1c6926b38d05b8d167f55bddb53ce25b4d04e2dcf3c17e4fcfbab1239045d046"
@@ -29,6 +14,11 @@
             "date": 1745306218901,
             "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/22-04-2025-13-success.log",
             "hash": "93adce8569ca8ed32e35c94ae32b9cc5e8339700459218c957aca726b9fb23de"
+        },
+        {
+            "date": 1745388502495,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/success/23-04-2025-12-success.log",
+            "hash": "39123141e1a050a66ff1302a24c09ab16378510931c4e748935092e9f18d925f"
         }
     ],
     "hashType": "sha256"

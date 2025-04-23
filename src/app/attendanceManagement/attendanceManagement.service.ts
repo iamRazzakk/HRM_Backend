@@ -12,10 +12,9 @@ const createAttendanceManagementIntoDB = async(payload:IAttendance) => {
     const userExists = await prisma.user.findUnique({
         where: { id: payload.userId },
       });
-      console.log("userExists", userExists);
     
       if (!userExists) {
-        throw new Error("❌ User not found!");
+        throw new ApiError(StatusCodes.BAD_REQUEST,"❌ User not found!");
       }
     
     const create = await prisma.employee.create({

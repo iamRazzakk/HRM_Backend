@@ -6,21 +6,6 @@
     "auditLog": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/.188c598ef9706a0ac710f9d054eedccd802dd7ac-audit.json",
     "files": [
         {
-            "date": 1745293107681,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/22-04-2025-09-error.log",
-            "hash": "d80f8531c841a5fde87819b5e44958ec17f33fac3e42ad87b0d307e098640975"
-        },
-        {
-            "date": 1745294529564,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/22-04-2025-10-error.log",
-            "hash": "bcf5a933c01c9ec89554e4868ac4421c7c5598cb1bb917613e465cf887679ad5"
-        },
-        {
-            "date": 1745298166638,
-            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/22-04-2025-11-error.log",
-            "hash": "d2d7fe40060b310dd50d6da5b4991d74465909ecfb5e92d02005b4227027ad45"
-        },
-        {
             "date": 1745302554602,
             "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/22-04-2025-12-error.log",
             "hash": "84ca31b71dd6df957efd05fe6fc7749a3162a52e0edaf83ce7849cca4a0f3b43"
@@ -29,6 +14,11 @@
             "date": 1745306221171,
             "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/22-04-2025-13-error.log",
             "hash": "e29c3fd565ac513dbe22cbcc8bb0f4dd6c97e1ea06dbeced545fc096db9283d9"
+        },
+        {
+            "date": 1745388502505,
+            "name": "/home/rakib/Desktop/Development/project/HRM-Backend/winston/error/23-04-2025-12-error.log",
+            "hash": "e0e9455c4165db9f6fe76333ba0d55acb612596ac343743e60589de8f50ca4db"
         }
     ],
     "hashType": "sha256"
