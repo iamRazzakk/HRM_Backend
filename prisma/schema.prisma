@@ -30,11 +30,11 @@ model User {
 }
 
 model Department {
-  id          String   @id @default(cuid())
-  name        String
+  id          String         @id @default(cuid())
+  name        DepartmentType
   description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
 }
 
 // model Employee {
@@ -75,14 +75,14 @@ enum Role {
   USER
 }
 
-// enum Department {
-//   HR
-//   IT
-//   Finance
-//   Marketing
-//   Sales
-//   Operations
-// }
+enum DepartmentType {
+  HR
+  IT
+  Finance
+  Marketing
+  Sales
+  Operations
+}
 
 enum Designation {
   JuniorDeveloper

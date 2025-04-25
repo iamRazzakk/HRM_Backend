@@ -9,7 +9,8 @@ const getAllUser = catchAsync(async (req: Request, res: Response) => {
     sendResponse(res, StatusCodes.CREATED, {
         message: "Retrieve All User",
         success: true,
-        data: result
+        meta: result.meta,
+        data: result.data
     })
 })
 
