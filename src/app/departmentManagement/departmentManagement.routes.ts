@@ -8,6 +8,6 @@ route.post("/", departmentController.createDepartment)
 route.get("/", departmentController.allDepartment)
 route.get("/:id", departmentController.getSingleDepartment)
 route.patch("/:id", departmentController.updateDepartmentFromDB)
-route.delete("/id", departmentController.deleteDepartment)
+route.delete("/:id", departmentController.deleteDepartment)
 
 export const departmentRouter = route

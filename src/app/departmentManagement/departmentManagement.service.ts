@@ -55,7 +55,8 @@ const getSingleDepartmentFromDB = async (id: string) => {
             description: true
         }
     })
-    if (result) {
+    console.log(result);
+    if (!result) {
         throw new ApiError(StatusCodes.BAD_REQUEST, "No data found")
     }
     return result

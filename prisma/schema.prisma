@@ -6,27 +6,26 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL") // Prisma will take the URL from .env file
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id             String      @id @default(cuid())
+  id             String           @id @default(cuid())
   firstName      String
   lastName       String
-  email          String?     @unique
-  phone          String?     @unique
+  email          String?          @unique
+  phone          String?          @unique
   address        String?
-  role           Role        @default(Employee)
-  designation    Designation @default(USER)
+  role           Role             @default(Employee)
+  designation    DesignationTypes @default(Intern)
   dateOfBirth    DateTime?
   joiningDate    DateTime?
   salary         Float?
   profilePicture String?
   password       String?
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
   isDeleted      Boolean?
-  // employee       Employee[]
 }
 
 model Department {
@@ -35,36 +34,19 @@ model Department {
   description String?
   createdAt   DateTime       @default(now())
   updatedAt   DateTime       @updatedAt
+  Designation Designation[]
 }
 
-// model Employee {
-//   employid      String          @id @default(cuid())
-//   userId        String
-//   user          User            @relation(fields: [userId], references: [id])
-//   date          DateTime
-//   timeIn        String
-//   timeOut       String
-//   status        presentStatus
-//   methodSignIn  String
-//   methodSignOut String?
-//   verifyStatus  Boolean
-//   createdAt     DateTime        @default(now())
-//   updatedAt     DateTime        @updatedAt
-//   payroleSystem PayroleSystem[]
-// }
-
-// payrole system
-
-// model PayroleSystem {
-//   employid         String        @id @default(cuid())
-//   employeeId       String
-//   month            DateTime
-//   totalWorkingDay  String
-//   dailyRate        String
-//   baseSalary       String
-//   status           payRoleStatus
-//   attendenceRecord Employee      @relation(fields: [employeeId], references: [employid])
-// }
+model Designation {
+  id           String     @id @default(cuid())
+  title        String
+  level        String
+  department   Department @relation(fields: [departmentId], references: [id])
+  departmentId String
+  description  String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
 
 enum Role {
   Admin
@@ -84,15 +66,14 @@ enum DepartmentType {
   Operations
 }
 
-enum Designation {
-  JuniorDeveloper
-  SeniorDeveloper
-  TeamLead
-  MANAGER
-  Director
-  PRESIDENT
-  CEO
-  USER
+enum DesignationTypes {
+  Junior
+  Mid
+  Senior
+  Lead
+  Intern
+
+  @@map("Designation")
 }
 
 enum presentStatus {

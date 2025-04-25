@@ -42,6 +42,7 @@ const getSingleDepartment = catchAsync(async (req: Request, res: Response) => {
 const deleteDepartment = catchAsync(async (req: Request, res: Response) => {
     const { id } = req.params;
     const result = await departmentService.deleteDepartmentIntoDB(id)
+    console.log(result);
     sendResponse(res, StatusCodes.OK, {
         message: "Department Delete successfully.",
         success: true,
