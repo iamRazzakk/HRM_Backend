@@ -34,7 +34,7 @@ const loginUserIntoDB = async (loginData: ILoginData): Promise<ILoginResponse> =
 const refreshAccessToken = async (refreshToken: string) => {
   // Verify the refresh token without DB check
   const decoded = verifyRefreshToken(refreshToken);
-  
+
   // Optionally: You could add a check if user still exists
   const user = await prisma.user.findUnique({
     where: { id: decoded.userId },

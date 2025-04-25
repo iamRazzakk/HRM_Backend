@@ -1,7 +1,8 @@
-import { PrismaClient } from "@prisma/client"
-import {  hashPassword } from "../../helper/generateSalt"
+
+import { hashPassword } from "../../helper/generateSalt"
 import { IUser } from "./user.interface"
 import { Role } from "../../enum/role";
+import { PrismaClient } from "@prisma/client";
 
 export const prisma = new PrismaClient()
 
@@ -28,7 +29,8 @@ const createUserIntoDB = async (userData: IUser) => {
         email: userData.email,
         phone: userData.phone,
         address: userData.address,
-        role: userData.role.toUpperCase() as Role,
+        // @ts-ignore
+        role: userData.role,
         // @ts-ignore
         department: userData.department,
         // @ts-ignore
@@ -38,7 +40,7 @@ const createUserIntoDB = async (userData: IUser) => {
         salary: userData.salary,
         profilePicture: userData.profilePicture,
         createdAt: new Date(),
-        password: hashedPassword, 
+        password: hashedPassword,
       },
     });
 
@@ -47,33 +49,52 @@ const createUserIntoDB = async (userData: IUser) => {
     throw new Error(`Failed to create user: ${(error as Error).message}`);
   }
 };
-  
+
 
 //   find all users from db
-const findUsersFromDB = async()=>{
-    const users = await prisma.user.findMany()
-    if(users===null){
-        throw new Error('Failed to find users')
-    }
-    return users
+const findUsersFromDB = async () => {
+  const users = await prisma.user.findMany()
+  if (users === null) {
+    throw new Error('Failed to find users')
+  }
+  return users
 }
 
 // delete user from db
-const deleteUserFromDB = async(userId:string)=>{
-    const user = await prisma.user.delete({
-        where:{
-            id:userId
-        }
-    })
-    if(!user){
-        throw new Error('Failed to delete user')
+const deleteUserFromDB = async (userId: string) => {
+  const user = await prisma.user.delete({
+    where: {
+      id: userId
     }
-    return user
+  })
+  if (!user) {
+    throw new Error('Failed to delete user')
+  }
+  return user
+}
+
+// update userProfile
+const updateProfileIntoDB = (payload: any) => {
+  const user = prisma.user.update({
+    where: {
+      id: payload.id
+    },
+    data: {
+      firstName: payload.firstName,
+      lastName: payload.lastName,
+      address: payload.address,
+      password: payload.password,
+      profilePicture: payload.profilePicture,
+
+    }
+  })
 }
 
 
+
 export const userService = {
-    createUserIntoDB,
-    findUsersFromDB,
-    deleteUserFromDB
+  createUserIntoDB,
+  findUsersFromDB,
+  deleteUserFromDB,
+  updateProfileIntoDB
 }

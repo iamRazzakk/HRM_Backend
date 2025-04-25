@@ -10,37 +10,49 @@ import { StatusCodes } from "http-status-codes";
  * @access Public
  */
 
-const createUser = catchAsync(async(req:Request, res:Response)=>{
+const createUser = catchAsync(async (req: Request, res: Response) => {
     const user = req.body;
     const result = await userService.createUserIntoDB(user)
-    sendResponse(res, StatusCodes.OK,{
-        success:true,
-        message:'User created successfully',
-        data:result
+    sendResponse(res, StatusCodes.OK, {
+        success: true,
+        message: 'User created successfully',
+        data: result
     })
 }
 )
-const getUsers = catchAsync(async(req:Request, res:Response)=>{
+const getUsers = catchAsync(async (req: Request, res: Response) => {
     const result = await userService.findUsersFromDB()
-    sendResponse(res, StatusCodes.OK,{
-        success:true,
-        message:'Users retrieved successfully',
-        data:result
+    sendResponse(res, StatusCodes.OK, {
+        success: true,
+        message: 'Users retrieved successfully',
+        data: result
     })
 })
 
-const deleteUser = catchAsync(async(req:Request, res:Response)=>{
+const deleteUser = catchAsync(async (req: Request, res: Response) => {
     const userId = req.params.id;
-const result= await userService.deleteUserFromDB(userId)
-sendResponse(res, StatusCodes.OK,{
-    success:true,
-    message:'User deleted successfully',
-    data:result
+    const result = await userService.deleteUserFromDB(userId)
+    sendResponse(res, StatusCodes.OK, {
+        success: true,
+        message: 'User deleted successfully',
+        data: result
+    })
 })
+
+
+const updateUserProfile = catchAsync(async (req: Request, res: Response) => {
+    const userId = req.params.id
+    const result = await userService.updateProfileIntoDB(userId)
+    sendResponse(res, StatusCodes.OK, {
+        message: "User Data update successfully",
+        success: true,
+        data: result
+    })
 })
 
 export const userController = {
     createUser,
     getUsers,
-    deleteUser
+    deleteUser,
+    updateUserProfile
 }
