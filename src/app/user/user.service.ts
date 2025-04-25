@@ -3,8 +3,9 @@ import { hashPassword } from "../../helper/generateSalt"
 import { IUser } from "./user.interface"
 import { Role } from "../../enum/role";
 import { PrismaClient } from "@prisma/client";
+import { prisma } from "../../config";
 
-export const prisma = new PrismaClient()
+
 
 
 // create user into db

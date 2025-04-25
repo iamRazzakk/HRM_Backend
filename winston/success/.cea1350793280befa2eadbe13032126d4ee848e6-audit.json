@@ -19,6 +19,16 @@
             "date": 1745579313855,
             "name": "F:\\Demo\\HRM_Backend\\winston\\success\\25-04-2025-17-success.log",
             "hash": "3911f75b0bd621f334e2aaf06d83357e0849c580cac2dfe32ded7e1de793761c"
+        },
+        {
+            "date": 1745582593410,
+            "name": "F:\\Demo\\HRM_Backend\\winston\\success\\25-04-2025-18-success.log",
+            "hash": "6df78e68eb3960d947888ab6879954e2906035179d8884f6b6cbbc52f916c092"
+        },
+        {
+            "date": 1745586029986,
+            "name": "F:\\Demo\\HRM_Backend\\winston\\success\\25-04-2025-19-success.log",
+            "hash": "a8037feba2f4ccccf43d43076559b1efa9a51d28bb95ab7fb5cd4bfe442abd42"
         }
     ],
     "hashType": "sha256"

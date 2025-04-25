@@ -1,7 +1,10 @@
-import { prisma } from "../user/user.service";
+
 import { generateAccessToken, generateRefreshToken, verifyRefreshToken } from "../../helper/jwtHelper";
 import { comparePassword } from "../../helper/generateSalt";
 import { ILoginData, ILoginResponse } from "./auth.interface";
+import { ApiError } from "../../error/ApiError";
+import { StatusCodes } from "http-status-codes";
+import { prisma } from "../../config";
 
 
 
@@ -18,7 +21,9 @@ const loginUserIntoDB = async (loginData: ILoginData): Promise<ILoginResponse> =
   if (!isPasswordValid) {
     throw new Error("Invalid password");
   }
-
+  if (user.isDeleted === true) {
+    throw new ApiError(StatusCodes.BAD_REQUEST, "User Ban from Admin")
+  }
   // Generate tokens without storing refreshToken in DB
   const accessToken = generateAccessToken({
     userId: user.id,
