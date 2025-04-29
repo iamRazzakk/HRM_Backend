@@ -1,8 +1,8 @@
 import { StatusCodes } from "http-status-codes";
 import { ApiError } from "../../error/ApiError";
-import { prisma } from "../user/user.service"
 import { IAttendance } from "./attendanceManagement.interface"
 import { PrismaQueryBuilder } from "../../utils/queryBuilder";
+import { prisma } from "../../config";
 
 /**
  * */ 

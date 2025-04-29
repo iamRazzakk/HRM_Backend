@@ -42,3 +42,11 @@ const getAll = await prisma.payroleSystem.findMany({
     }
 })
 }
+
+
+
+
+export const payroleSystemService= {
+    createPayroleSystemIntoDB,
+    getAllPayroleFromDB
+}
