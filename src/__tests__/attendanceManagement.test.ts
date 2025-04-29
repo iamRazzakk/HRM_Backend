@@ -1,16 +1,8 @@
 
-<<<<<<< HEAD
-import { attendanceManagementService } from "../app/attendanceManagement/attendanceManagement.service";
-import { prisma } from "../config";
-
-import { presentStatus } from "../enum/presentStatus";
-import { ApiError } from "../error/ApiError";
-=======
 // import { attendanceManagementService } from "../app/attendanceManagement/attendanceManagement.service";
 // import { prisma } from "../app/user/user.service";
 // import { presentStatus } from "../enum/presentStatus";
 // import { ApiError } from "../error/ApiError";
->>>>>>> aea64e607c60e3713ff74d6ea67825db3bf31aef
 
 // // Mock data with realistic IDs
 // const mockUserId = "cm9pty4rv0000eqzid1iqimgs";
