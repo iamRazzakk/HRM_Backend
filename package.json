@@ -9,7 +9,8 @@
     "migrate": "npx prisma migrate dev --name",
     "generate": "npx prisma generate",
     "test": "jest --detectOpenHandles",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
