@@ -29,7 +29,7 @@ async function main() {
     });
   } catch (error) {
     errorLogger.error(colors.red('🤢 Failed to connect Database'));
-    process.exit(1); // Exit if database connection fails
+    process.exit(1);
   }
 
   // Handle unhandled rejections

@@ -6,39 +6,9 @@
     "auditLog": "F:\\Demo\\HRM_Backend\\winston\\error\\.85ada69782ec1bcbd2930d7f3d166fc2cd0c4ef0-audit.json",
     "files": [
         {
-            "date": 1745510495087,
-            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\24-04-2025-22-error.log",
-            "hash": "953f807274f4efd957954fb114bf8c629a7aff18e22b4cdaa397c7e84a1dc687"
-        },
-        {
-            "date": 1745579313857,
-            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\25-04-2025-17-error.log",
-            "hash": "b3b7b2bc5842eb1a6c6f94a6435e71bb7dca2a7fc591f1b6ef0394a5dd4ecb20"
-        },
-        {
-            "date": 1745582593413,
-            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\25-04-2025-18-error.log",
-            "hash": "3b67a5fcb780126c42c500591f6bd8e3911d8b0ba50a1fa84fa6835e366a9ef0"
-        },
-        {
-            "date": 1745586029990,
-            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\25-04-2025-19-error.log",
-            "hash": "c5cbc9388ff6f1e6ca382b13665454ca49e9af65ad05d92b0750da5a22a49ad1"
-        },
-        {
-            "date": 1745589677228,
-            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\25-04-2025-20-error.log",
-            "hash": "cba58c827a29961d1c34bd81a0462bdf8936292410af9d4cca2870dcc915b5fd"
-        },
-        {
-            "date": 1745596254517,
-            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\25-04-2025-21-error.log",
-            "hash": "f16de64399961913fb61c42b7d63726b9671df5b693f3a93a9a3851221fa8b0e"
-        },
-        {
-            "date": 1745596877975,
-            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\25-04-2025-22-error.log",
-            "hash": "42d1b2515f7691521fb87e3f9e52b720e4ae7f6024fcfa8a5dd246e0195b3d4f"
+            "date": 1745933853377,
+            "name": "F:\\Demo\\HRM_Backend\\winston\\error\\29-04-2025-19-error.log",
+            "hash": "3a770c41c4bb011b4eb0e7eececb3bcf0dd8fc196055330f7666fcc1bd6f0f68"
         }
     ],
     "hashType": "sha256"

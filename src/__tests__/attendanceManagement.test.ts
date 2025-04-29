@@ -1,6 +1,7 @@
 
 import { attendanceManagementService } from "../app/attendanceManagement/attendanceManagement.service";
-import { prisma } from "../app/user/user.service";
+import { prisma } from "../config";
+
 import { presentStatus } from "../enum/presentStatus";
 import { ApiError } from "../error/ApiError";
 
